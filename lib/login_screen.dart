@@ -47,36 +47,49 @@ class LogInScreen extends StatelessWidget {
                 style: TextStyle(fontSize: 17),
               ),
               const SizedBox(height: 15),
-              const LogInField(hintText: 'Email'),
+              const LogInField(
+                hintText: 'Email',
+                colorIndex: ColorCode.gradient2,
+              ),
               const SizedBox(height: 15),
-              const LogInField(hintText: 'Password'),
+              const LogInField(
+                hintText: 'Password',
+                colorIndex: ColorCode.gradient2,
+              ),
               const SizedBox(height: 25),
               GradientButton(
                 text: 'Sign In',
-                onPressed: () {},
+                onPressed: () {
+                  print('Sign In Button');
+                },
               ),
               const SizedBox(height: 20),
-              GestureDetector(
-                onTap: () => Navigator.push(
-                  context,
-                  MaterialPageRoute(
-                    builder: (context) => SignUpScreen(),
-                  ),
-                ),
-                child: RichText(
-                  text: const TextSpan(
-                    text: 'Don\'t have an account? ',
+              Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  const Text(
+                    'Don\'t have an account?  ',
                     style:
                         TextStyle(fontSize: 17, color: ColorCode.whiteColor2),
-                    children: [
-                      TextSpan(
-                        text: 'Create Account',
-                        style: TextStyle(
-                            fontSize: 17, color: ColorCode.whiteColor),
-                      ),
-                    ],
                   ),
-                ),
+                  GestureDetector(
+                    onTap: () => Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => const SignUpScreen(),
+                      ),
+                    ),
+                    child: GradientText(
+                      'Create Account',
+                      style: const TextStyle(fontSize: 17),
+                      colors: const [
+                        ColorCode.gradient4,
+                        ColorCode.gradient5,
+                        ColorCode.gradient6,
+                      ],
+                    ),
+                  ),
+                ],
               ),
               const SizedBox(height: 5),
               const Text(

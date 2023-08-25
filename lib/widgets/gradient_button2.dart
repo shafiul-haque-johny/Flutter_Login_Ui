@@ -2,10 +2,10 @@ import 'package:flutter/material.dart';
 
 import '../colorCode.dart';
 
-class GradientButton extends StatelessWidget {
+class GradientButton2 extends StatelessWidget {
   final String text;
   final VoidCallback onPressed;
-  const GradientButton({
+  const GradientButton2({
     Key? key,
     required this.text,
     required this.onPressed,
@@ -17,9 +17,9 @@ class GradientButton extends StatelessWidget {
       decoration: BoxDecoration(
         gradient: const LinearGradient(
           colors: [
-            ColorCode.gradient1,
-            ColorCode.gradient2,
-            ColorCode.gradient3,
+            ColorCode.gradient4,
+            ColorCode.gradient5,
+            ColorCode.gradient6,
           ],
           begin: Alignment.bottomLeft,
           end: Alignment.topRight,

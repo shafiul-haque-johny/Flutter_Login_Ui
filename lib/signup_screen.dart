@@ -3,6 +3,7 @@ import 'package:responsive_login_ui/login_screen.dart';
 import 'package:simple_gradient_text/simple_gradient_text.dart';
 import 'colorCode.dart';
 import 'widgets/gardient_button.dart';
+import 'widgets/gradient_button2.dart';
 import 'widgets/login_field.dart';
 
 class SignUpScreen extends StatelessWidget {
@@ -15,7 +16,7 @@ class SignUpScreen extends StatelessWidget {
         child: Center(
           child: Column(
             children: [
-              Image.network('assets/images/signin_balls.png'),
+              Image.network('assets/images/signin_balls2.png'),
               const SizedBox(height: 15),
               GradientText(
                 'Create \n          Account',
@@ -28,15 +29,26 @@ class SignUpScreen extends StatelessWidget {
                 ],
               ),
               const SizedBox(height: 30),
-              const LogInField(hintText: 'Name'),
+              const LogInField(
+                hintText: 'Name',
+                colorIndex: ColorCode.gradient5,
+              ),
               const SizedBox(height: 15),
-              const LogInField(hintText: 'Email'),
+              const LogInField(
+                hintText: 'Email',
+                colorIndex: ColorCode.gradient5,
+              ),
               const SizedBox(height: 15),
-              const LogInField(hintText: 'Password'),
+              const LogInField(
+                hintText: 'Password',
+                colorIndex: ColorCode.gradient5,
+              ),
               const SizedBox(height: 25),
-              GradientButton(
+              GradientButton2(
                 text: 'Sign Up',
-                onPressed: () {},
+                onPressed: () {
+                  print('Sign Up Button');
+                },
               ),
               const SizedBox(height: 15),
               const Text(
@@ -73,28 +85,33 @@ class SignUpScreen extends StatelessWidget {
                   ),
                 ],
               ),
-              const SizedBox(height: 5),
-              GestureDetector(
-                onTap: () => Navigator.push(
-                  context,
-                  MaterialPageRoute(
-                    builder: (context) => const LogInScreen(),
-                  ),
-                ),
-                child: RichText(
-                  text: const TextSpan(
-                    text: 'Already a user? ',
+              const SizedBox(height: 10),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  const Text(
+                    'Already a user?  ',
                     style:
                         TextStyle(fontSize: 17, color: ColorCode.whiteColor3),
-                    children: [
-                      TextSpan(
-                        text: 'SignIn',
-                        style: TextStyle(
-                            fontSize: 17, color: ColorCode.whiteColor),
-                      ),
-                    ],
                   ),
-                ),
+                  GestureDetector(
+                    onTap: () => Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => const LogInScreen(),
+                      ),
+                    ),
+                    child: GradientText(
+                      'Sign In',
+                      style: const TextStyle(fontSize: 17),
+                      colors: const [
+                        ColorCode.gradient1,
+                        ColorCode.gradient2,
+                        ColorCode.gradient3,
+                      ],
+                    ),
+                  ),
+                ],
               ),
             ],
           ),

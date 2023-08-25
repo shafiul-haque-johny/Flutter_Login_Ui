@@ -4,8 +4,10 @@ import '../colorCode.dart';
 
 class LogInField extends StatelessWidget {
   final String hintText;
+  final Color colorIndex;
 
-  const LogInField({Key? key, required this.hintText}) : super(key: key);
+  const LogInField({Key? key, required this.hintText, required this.colorIndex})
+      : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -26,9 +28,9 @@ class LogInField extends StatelessWidget {
               10,
             ),
           ),
-          focusedBorder: const OutlineInputBorder(
+          focusedBorder: OutlineInputBorder(
             borderSide: BorderSide(
-              color: ColorCode.gradient2,
+              color: colorIndex,
               width: 3,
             ),
           ),
