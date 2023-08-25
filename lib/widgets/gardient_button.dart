@@ -3,7 +3,10 @@ import 'package:flutter/material.dart';
 import '../colorCode.dart';
 
 class GradientButton extends StatelessWidget {
-  const GradientButton({Key? key}) : super(key: key);
+  final String text;
+  final VoidCallback onPressed;
+  const GradientButton({Key? key, required this.text, required this.onPressed})
+      : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -21,15 +24,15 @@ class GradientButton extends StatelessWidget {
         borderRadius: BorderRadius.circular(12),
       ),
       child: ElevatedButton(
-        onPressed: () {},
+        onPressed: onPressed,
         style: ElevatedButton.styleFrom(
           fixedSize: const Size(395, 47),
           backgroundColor: Colors.transparent,
           shadowColor: Colors.transparent,
         ),
-        child: const Text(
-          'Sign In',
-          style: TextStyle(fontWeight: FontWeight.w600, fontSize: 17),
+        child: Text(
+          text,
+          style: const TextStyle(fontWeight: FontWeight.w600, fontSize: 17),
         ),
       ),
     );

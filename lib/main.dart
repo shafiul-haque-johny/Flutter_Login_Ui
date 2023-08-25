@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'colorCode.dart';
 import 'login_screen.dart';
+import 'welcome_screen.dart';
 
 void main() {
   runApp(const MyApp());
@@ -17,7 +18,8 @@ class MyApp extends StatelessWidget {
       theme: ThemeData.dark().copyWith(
         scaffoldBackgroundColor: ColorCode.backgroundColor,
       ),
-      home: const LogInScreen(),
+      //home: const LogInScreen(),
+      home: const WelcomeScreen(),
     );
   }
 }
